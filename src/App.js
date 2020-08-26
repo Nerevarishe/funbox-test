@@ -1,12 +1,15 @@
 import React, { Fragment } from "react";
 import Main from "./containers/Layout/Main";
 import GlobalStyle from "./GlobalStyle";
+import Theme from "./containers/Theme";
 
 function App() {
   return (
     <Fragment>
-      <GlobalStyle />
-      <Main />
+      <Theme>
+        <GlobalStyle />
+        <Main />
+      </Theme>
     </Fragment>
   );
 }

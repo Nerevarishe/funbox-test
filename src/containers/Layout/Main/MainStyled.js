@@ -1,7 +1,5 @@
 import styled from "styled-components";
-
-const MainStyled = styled.main`
-  background: #ffffff;
-`;
+// TODO: Need remove this component?
+const MainStyled = styled.main``;
 
 export default MainStyled;
