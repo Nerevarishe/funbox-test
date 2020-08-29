@@ -44,7 +44,10 @@ const TradeCard = ({
         status={{ hover: hover, selected: selected }}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        onClick={() => setSelected(!selected)}
+        onClick={() => {
+          setSelected(!selected);
+          setHover(false);
+        }}
       >
         <TradeCardPreTitlePosition>
           <Trebuchet16NormalFont style={{ color: theme.colors.font.gray }}>
@@ -86,7 +89,7 @@ const TradeCard = ({
       </TradeCardStyled>
       <TradeCardTextUnderCardPosition>
         <TradeCardTextUnderCard
-          text={selected ? description : null}
+          text={selected ? description : ""}
           clickHandler={() => setSelected(!selected)}
         />
       </TradeCardTextUnderCardPosition>
