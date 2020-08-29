@@ -37,7 +37,6 @@ const TradeCard = ({
   const [hover, setHover] = useState(false);
   const [selected, setSelected] = useState(false);
 
-  // TODO: Add clipPath for IE11
   return (
     <div style={{ margin: "15px" }}>
       <TradeCardStyled

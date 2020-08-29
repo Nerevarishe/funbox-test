@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import { withTheme } from "styled-components";
 import { Trebuchet13NormalFont } from "../../Fonts/Fonts";
 
-//TODO: change color to appropriate
-
 const TradeCardTextUnderCard = ({ text, cardStatus, theme, clickHandler }) => {
   return (
     <Trebuchet13NormalFont style={{ color: theme.colors.font.white }}>

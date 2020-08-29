@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import bgPattern from "./assets/img/bg-pattern.png";
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -18,19 +19,15 @@ const GlobalStyle = createGlobalStyle`
     height: 100vh;
   }
   
-  img {
-    vertical-align: bottom;
+  body {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 5e-5) 49.88%,
+      rgba(0, 0, 0, 0.5) 100%
+    ),
+    url(${bgPattern});
   }
-  
-  // TODO: Remove before publish!
-  // * {
-  //   border: 1px solid #f00 !important;
-  // }
-  
-  @media (min-width: 768px) {}
-  
-  // Extra large devices (large desktops, 1200px and up)
-  @media (min-width: 1200px) {}
 `;
 
 export default GlobalStyle;

@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-// TODO: Create order
-
 export const BaseFont = styled.span`
   font-family: "Trebuchet MS", "sans-serif";
   font-style: normal;
@@ -19,12 +17,6 @@ export const Trebuchet14NormalFont = styled(BaseFont)`
   line-height: 16px;
 `;
 
-export const Trebuchet14BoldFont = styled(BaseFont)`
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 16px;
-`;
-
 export const Trebuchet16NormalFont = styled(BaseFont)`
   font-weight: normal;
   font-size: 16px;
@@ -37,10 +29,16 @@ export const Trebuchet21NormalFont = styled(BaseFont)`
   line-height: 22px;
 `;
 
-export const Trebuchet48BoldFont = styled(BaseFont)`
+export const Trebuchet42NormalFont = styled(BaseFont)`
+  font-weight: normal;
+  font-size: 42px;
+  line-height: 22px;
+`;
+
+export const Trebuchet14BoldFont = styled(BaseFont)`
   font-weight: bold;
-  font-size: 48px;
-  line-height: 56px;
+  font-size: 14px;
+  line-height: 16px;
 `;
 
 export const Trebuchet24BoldFont = styled(BaseFont)`
@@ -49,10 +47,10 @@ export const Trebuchet24BoldFont = styled(BaseFont)`
   line-height: 28px;
 `;
 
-export const Trebuchet42NormalFont = styled(BaseFont)`
-  font-weight: normal;
-  font-size: 42px;
-  line-height: 22px;
+export const Trebuchet48BoldFont = styled(BaseFont)`
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
 `;
 
 export const Exo2_36Font = styled.span`
