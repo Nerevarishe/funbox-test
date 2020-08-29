@@ -3,12 +3,12 @@ import PropTypes from "prop-types";
 import { withTheme } from "styled-components";
 
 import TradeCardStyled from "./TradeCardStyled";
-import TradeCardPreTitlePosition from "./TradeCardPreTitlePosition";
-import TradeCardBrandNamePosition from "./TradeCardBrandNamePosition";
-import TradeCardIngredientPosition from "./TradeCardIngredientPosition";
-import TradeCardWeightPosition from "./TradeCardWeightPosition";
+import TradeCardPreTitlePosition from "./positionElements/TradeCardPreTitlePosition";
+import TradeCardBrandNamePosition from "./positionElements/TradeCardBrandNamePosition";
+import TradeCardIngredientPosition from "./positionElements/TradeCardIngredientPosition";
+import TradeCardWeightPosition from "./positionElements/TradeCardWeightPosition";
 import TradeCardWeightStyled from "./TradeCardWeightStyled";
-import TradeCardTextUnderCardPosition from "./TradeCardTextUnderCardPosition";
+import TradeCardTextUnderCardPosition from "./positionElements/TradeCardTextUnderCardPosition";
 import TradeCardTextUnderCard from "./TradeCardTextUnderCard";
 
 import {
@@ -20,7 +20,7 @@ import {
   Trebuchet42NormalFont,
   Trebuchet48BoldFont,
 } from "../../Fonts/Fonts";
-import TradeCardPromotionPosition from "./TradeCardPromotionPosition";
+import TradeCardPromotionPosition from "./positionElements/TradeCardPromotionPosition";
 
 const TradeCard = ({
   preTitle,
