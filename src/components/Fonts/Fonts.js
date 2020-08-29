@@ -13,6 +13,18 @@ export const Trebuchet13NormalFont = styled(BaseFont)`
   line-height: 15px;
 `;
 
+export const Trebuchet14NormalFont = styled(BaseFont)`
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+`;
+
+export const Trebuchet14BoldFont = styled(BaseFont)`
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+`;
+
 export const Trebuchet16NormalFont = styled(BaseFont)`
   font-weight: normal;
   font-size: 16px;

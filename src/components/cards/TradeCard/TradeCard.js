@@ -12,14 +12,27 @@ import TradeCardTextUnderCardPosition from "./TradeCardTextUnderCardPosition";
 import TradeCardTextUnderCard from "./TradeCardTextUnderCard";
 
 import {
+  Trebuchet14BoldFont,
+  Trebuchet14NormalFont,
   Trebuchet16NormalFont,
   Trebuchet21NormalFont,
   Trebuchet24BoldFont,
   Trebuchet42NormalFont,
   Trebuchet48BoldFont,
 } from "../../Fonts/Fonts";
+import TradeCardPromotionPosition from "./TradeCardPromotionPosition";
 
-const TradeCard = ({ preTitle, brandName, withIngredient, weight, theme }) => {
+const TradeCard = ({
+  preTitle,
+  brandName,
+  withIngredient,
+  portions,
+  promotionAmount,
+  promotionText,
+  promotionAdditionText,
+  weight,
+  theme,
+}) => {
   const [hover, setHover] = useState(false);
   const [selected, setSelected] = useState(false);
 
@@ -43,6 +56,22 @@ const TradeCard = ({ preTitle, brandName, withIngredient, weight, theme }) => {
         <TradeCardIngredientPosition>
           <Trebuchet24BoldFont>{withIngredient}</Trebuchet24BoldFont>
         </TradeCardIngredientPosition>
+        <TradeCardPromotionPosition>
+          <Trebuchet14NormalFont style={{ color: theme.colors.font.gray }}>
+            <Trebuchet14BoldFont>{portions}</Trebuchet14BoldFont> порций
+            <br />
+            {promotionAmount === 1 ? (
+              promotionText
+            ) : (
+              <Trebuchet14BoldFont
+                children={promotionAmount.toString() + " "}
+              />
+            )}
+            {promotionAmount !== 1 ? promotionText : null}
+            <br />
+            {promotionAdditionText ? promotionAdditionText : null}
+          </Trebuchet14NormalFont>
+        </TradeCardPromotionPosition>
         <TradeCardWeightPosition>
           <TradeCardWeightStyled status={{ hover: hover, selected: selected }}>
             <Trebuchet42NormalFont style={{ color: theme.colors.font.white }}>
@@ -65,6 +94,10 @@ TradeCard.propTypes = {
   preTitle: PropTypes.string,
   brandName: PropTypes.string.isRequired,
   withIngredient: PropTypes.string.isRequired,
+  portions: PropTypes.number,
+  promotionAmount: PropTypes.number,
+  promotionText: PropTypes.string,
+  promotionAdditionText: PropTypes.string,
   weight: PropTypes.string.isRequired,
 };
 
@@ -72,7 +105,12 @@ TradeCard.defaultProps = {
   preTitle: "Сказочное заморское яство",
   brandName: "Нямушка",
   withIngredient: "c фуа-гра",
+  portions: 10,
+  promotionAmount: 1,
+  promotionText: "мышь в подарок",
+  promotionAdditionText: "",
   weight: "0,5",
+  description: "Печень утки разварная с артишоками.",
 };
 
 export default withTheme(TradeCard);
