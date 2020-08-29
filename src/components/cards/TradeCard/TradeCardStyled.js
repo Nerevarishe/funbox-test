@@ -2,11 +2,10 @@ import styled from "styled-components";
 import bgCat from "../../../assets/img/cat.png";
 
 // TODO: Make clip relative!
-// TODO: Change card width to 312px
 const TradeCardStyled = styled.div`
   position: relative;
-  min-width: 320px;
-  min-height: 480px;
+  max-width: 320px;
+  height: 480px;
   border: 4px solid
       ${({ theme, status }) =>
         status.hover
