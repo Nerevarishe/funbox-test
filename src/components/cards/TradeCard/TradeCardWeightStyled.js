@@ -8,7 +8,16 @@ const TradeCardWeightStyled = styled.div`
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: ${(props) => props.theme.colors.border.default};
+  background: ${({ theme, status }) =>
+    status.hover
+      ? status.hover && status.selected
+        ? theme.colors.border.selectedHover
+        : status.selected
+        ? theme.colors.border.selected
+        : theme.colors.border.defaultHover
+      : status.selected
+      ? theme.colors.border.selected
+      : theme.colors.border.default}};
 
   > * {
     :first-child {

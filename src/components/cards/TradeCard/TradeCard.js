@@ -25,13 +25,13 @@ const TradeCard = ({ preTitle, brandName, withIngredient, weight, theme }) => {
 
   // TODO: Add clipPath for IE11
   return (
-    <div
-      style={{ margin: "15px" }}
-      onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
-      onClick={() => setSelected(!selected)}
-    >
-      <TradeCardStyled status={{ hover: hover, selected: selected }}>
+    <div style={{ margin: "15px" }}>
+      <TradeCardStyled
+        status={{ hover: hover, selected: selected }}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        onClick={() => setSelected(!selected)}
+      >
         <TradeCardPreTitlePosition>
           <Trebuchet16NormalFont style={{ color: theme.colors.font.gray }}>
             {preTitle}
@@ -44,7 +44,7 @@ const TradeCard = ({ preTitle, brandName, withIngredient, weight, theme }) => {
           <Trebuchet24BoldFont>{withIngredient}</Trebuchet24BoldFont>
         </TradeCardIngredientPosition>
         <TradeCardWeightPosition>
-          <TradeCardWeightStyled>
+          <TradeCardWeightStyled status={{ hover: hover, selected: selected }}>
             <Trebuchet42NormalFont style={{ color: theme.colors.font.white }}>
               {weight}
             </Trebuchet42NormalFont>
@@ -55,7 +55,7 @@ const TradeCard = ({ preTitle, brandName, withIngredient, weight, theme }) => {
         </TradeCardWeightPosition>
       </TradeCardStyled>
       <TradeCardTextUnderCardPosition>
-        <TradeCardTextUnderCard />
+        <TradeCardTextUnderCard clickHandler={() => setSelected(!selected)} />
       </TradeCardTextUnderCardPosition>
     </div>
   );

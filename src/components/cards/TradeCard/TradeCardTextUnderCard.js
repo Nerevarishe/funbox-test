@@ -5,7 +5,7 @@ import { Trebuchet13NormalFont } from "../../Fonts/Fonts";
 
 //TODO: change color to appropriate
 
-const TradeCardTextUnderCard = ({ text, cardStatus, theme }) => {
+const TradeCardTextUnderCard = ({ text, cardStatus, theme, clickHandler }) => {
   return (
     <Trebuchet13NormalFont style={{ color: theme.colors.font.white }}>
       {text}
@@ -13,7 +13,9 @@ const TradeCardTextUnderCard = ({ text, cardStatus, theme }) => {
         style={{
           color: theme.colors.border.default,
           borderBottom: `2px dashed ${theme.colors.border.default}`,
+          cursor: "pointer",
         }}
+        onClick={clickHandler}
       >
         купи
       </span>
