@@ -6,9 +6,7 @@ import Store from "../../Store";
 const Main = () => {
   return (
     <MainPosition>
-      <MainStyled>
         <Store />
-      </MainStyled>
     </MainPosition>
   );
 };

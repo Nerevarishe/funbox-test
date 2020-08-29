@@ -1,12 +1,10 @@
 import styled from "styled-components";
 import bg from "../../../assets/img/bg-pattern.png";
 
-const MainPosition = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const MainPosition = styled.main`
   min-width: 320px;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
 
   background: linear-gradient(
       180deg,

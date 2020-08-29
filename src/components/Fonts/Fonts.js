@@ -7,6 +7,12 @@ export const BaseFont = styled.span`
   font-style: normal;
 `;
 
+export const Trebuchet13NormalFont = styled(BaseFont)`
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+`;
+
 export const Trebuchet16NormalFont = styled(BaseFont)`
   font-weight: normal;
   font-size: 16px;
