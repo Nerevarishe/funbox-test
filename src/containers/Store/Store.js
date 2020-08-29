@@ -1,6 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { withTheme } from "styled-components";
+
 import TradeCard from "../../components/cards/TradeCard";
 import StoreTradeCardsPosition from "./StoreTradeCardsPosition";
+import StoreTitlePosition from "./StoreTitlePosition";
+
+import { Exo2_36Font } from "../../components/Fonts/Fonts";
+import StorePosition from "./StorePosition";
 
 const productCards = [
   {
@@ -44,25 +50,35 @@ const productCards = [
   },
 ];
 
-const Store = () => {
+const Store = ({ theme }) => {
   return (
-    <StoreTradeCardsPosition>
-      {productCards.map((card) => (
-        <TradeCard
-          key={card.id}
-          preTitle={card.preTitle}
-          brandName={card.brandName}
-          withIngredient={card.withIngredient}
-          portions={card.portions}
-          promotionAmount={card.promotionAmount}
-          promotionText={card.promotionText}
-          promotionAdditionText={card.promotionAdditionText}
-          weight={card.weight}
-          description={card.description}
-        />
-      ))}
-    </StoreTradeCardsPosition>
+    <StorePosition>
+      <StoreTitlePosition>
+        <Exo2_36Font
+          as="h1"
+          style={{ color: theme.colors.font.white, textAlign: "center" }}
+        >
+          Ты сегодня покормил кота?
+        </Exo2_36Font>
+      </StoreTitlePosition>
+      <StoreTradeCardsPosition>
+        {productCards.map((card) => (
+          <TradeCard
+            key={card.id}
+            preTitle={card.preTitle}
+            brandName={card.brandName}
+            withIngredient={card.withIngredient}
+            portions={card.portions}
+            promotionAmount={card.promotionAmount}
+            promotionText={card.promotionText}
+            promotionAdditionText={card.promotionAdditionText}
+            weight={card.weight}
+            description={card.description}
+          />
+        ))}
+      </StoreTradeCardsPosition>
+    </StorePosition>
   );
 };
 
-export default Store;
+export default withTheme(Store);

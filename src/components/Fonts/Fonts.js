@@ -54,7 +54,7 @@ export const Trebuchet48BoldFont = styled(BaseFont)`
 `;
 
 export const Exo2_36Font = styled.span`
-  font-family: "Exo 2", "sans-serif";
+  font-family: "Exo2Thin", "sans-serif";
   font-style: normal;
   font-weight: 250;
   font-size: 36px;
