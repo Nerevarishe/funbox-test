@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { withTheme } from "styled-components";
 
@@ -6,9 +6,11 @@ import TradeCardStyled from "./TradeCardStyled";
 import TradeCardPreTitlePosition from "./TradeCardPreTitlePosition";
 import TradeCardBrandNamePosition from "./TradeCardBrandNamePosition";
 import TradeCardIngredientPosition from "./TradeCardIngredientPosition";
-import TradeCardWeightStyled from "./TradeCardWeightStyled";
-
 import TradeCardWeightPosition from "./TradeCardWeightPosition";
+import TradeCardWeightStyled from "./TradeCardWeightStyled";
+import TradeCardTextUnderCardPosition from "./TradeCardTextUnderCardPosition";
+import TradeCardTextUnderCard from "./TradeCardTextUnderCard";
+
 import {
   Trebuchet16NormalFont,
   Trebuchet21NormalFont,
@@ -16,18 +18,20 @@ import {
   Trebuchet42NormalFont,
   Trebuchet48BoldFont,
 } from "../../Fonts/Fonts";
-import TradeCardTextUnderCard from "./TradeCardTextUnderCard";
-import TradeCardTextUnderCardPosition from "./TradeCardTextUnderCardPosition";
 
 const TradeCard = ({ preTitle, brandName, withIngredient, weight, theme }) => {
   const [hover, setHover] = useState(false);
   const [selected, setSelected] = useState(false);
-  const [disabled, setDisabled] = useState(false);
 
   // TODO: Add clipPath for IE11
   return (
-    <div style={{ margin: "15px" }}>
-      <TradeCardStyled>
+    <div
+      style={{ margin: "15px" }}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      onClick={() => setSelected(!selected)}
+    >
+      <TradeCardStyled status={{ hover: hover, selected: selected }}>
         <TradeCardPreTitlePosition>
           <Trebuchet16NormalFont style={{ color: theme.colors.font.gray }}>
             {preTitle}

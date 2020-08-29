@@ -2,16 +2,28 @@ import styled from "styled-components";
 import bgCat from "../../../assets/img/cat.png";
 
 // TODO: Make clip relative!
+// TODO: Change card width to 312px
 const TradeCardStyled = styled.div`
   position: relative;
   min-width: 320px;
   min-height: 480px;
-  border: 4px solid ${(props) => props.theme.colors.border.default};
+  border: 4px solid
+      ${({ theme, status }) =>
+        status.hover
+          ? status.hover && status.selected
+            ? theme.colors.border.selectedHover
+            : status.selected
+            ? theme.colors.border.selected
+            : theme.colors.border.defaultHover
+          : status.selected
+          ? theme.colors.border.selected
+          : theme.colors.border.default}};
   border-radius: 12px;
   margin-bottom: 14px;
-  background: url(${bgCat}) no-repeat, ${(props) => props.theme.colors.bg.card};
+  background: url(${bgCat}) no-repeat, ${({ theme }) => theme.colors.bg.card};
   overflow: hidden;
   clip-path: polygon(48px 0, 100% 0, 100% 100%, 0 100%, 0 48px, 48px 0);
+  cursor: pointer;
 
   :before {
     content: "";
@@ -20,7 +32,17 @@ const TradeCardStyled = styled.div`
     margin: -51px;
     position: absolute;
     transform: rotate(45deg);
-    border: 4px solid ${(props) => props.theme.colors.border.default};
+    border: 4px solid
+      ${({ theme, status }) =>
+        status.hover
+          ? status.hover && status.selected
+            ? theme.colors.border.selectedHover
+            : status.selected
+            ? theme.colors.border.selected
+            : theme.colors.border.defaultHover
+          : status.selected
+          ? theme.colors.border.selected
+          : theme.colors.border.default}};
   }
 `;
 
