@@ -11,7 +11,7 @@ const TradeCardStyled = styled.div`
   margin-bottom: 14px;
   background: url(${bgCat}) no-repeat, ${(props) => props.theme.colors.bg.card};
   overflow: hidden;
-  clip-path: polygon(49px 0, 100% 0, 100% 100%, 0 100%, 0 49px, 49px 0);
+  clip-path: polygon(48px 0, 100% 0, 100% 100%, 0 100%, 0 48px, 48px 0);
 
   :before {
     content: "";

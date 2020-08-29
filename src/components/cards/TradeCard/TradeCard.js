@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { withTheme } from "styled-components";
 
-import TradeCardPosition from "./TradeCardPosition";
 import TradeCardStyled from "./TradeCardStyled";
 import TradeCardPreTitlePosition from "./TradeCardPreTitlePosition";
 import TradeCardBrandNamePosition from "./TradeCardBrandNamePosition";
@@ -27,7 +26,7 @@ const TradeCard = ({ preTitle, brandName, withIngredient, weight, theme }) => {
 
   // TODO: Add clipPath for IE11
   return (
-    <TradeCardPosition>
+    <div style={{ margin: "15px" }}>
       <TradeCardStyled>
         <TradeCardPreTitlePosition>
           <Trebuchet16NormalFont style={{ color: theme.colors.font.gray }}>
@@ -54,7 +53,7 @@ const TradeCard = ({ preTitle, brandName, withIngredient, weight, theme }) => {
       <TradeCardTextUnderCardPosition>
         <TradeCardTextUnderCard />
       </TradeCardTextUnderCardPosition>
-    </TradeCardPosition>
+    </div>
   );
 };
 
