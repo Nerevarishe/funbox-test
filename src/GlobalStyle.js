@@ -20,13 +20,13 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
+    background-image: url(${bgPattern});
     background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0.5) 0%,
       rgba(0, 0, 0, 5e-5) 49.88%,
       rgba(0, 0, 0, 0.5) 100%
-    ),
-    url(${bgPattern});
+    ),  url(${bgPattern});
   }
 `;
 

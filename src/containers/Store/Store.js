@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import TradeCard from "../../components/cards/TradeCard";
 import StoreTradeCardsPosition from "./StoreTradeCardsPosition";
 
