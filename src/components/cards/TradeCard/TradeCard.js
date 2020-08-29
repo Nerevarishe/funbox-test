@@ -31,6 +31,7 @@ const TradeCard = ({
   promotionText,
   promotionAdditionText,
   weight,
+  description,
   theme,
 }) => {
   const [hover, setHover] = useState(false);
@@ -84,7 +85,10 @@ const TradeCard = ({
         </TradeCardWeightPosition>
       </TradeCardStyled>
       <TradeCardTextUnderCardPosition>
-        <TradeCardTextUnderCard clickHandler={() => setSelected(!selected)} />
+        <TradeCardTextUnderCard
+          text={selected ? description : null}
+          clickHandler={() => setSelected(!selected)}
+        />
       </TradeCardTextUnderCardPosition>
     </div>
   );
@@ -99,6 +103,7 @@ TradeCard.propTypes = {
   promotionText: PropTypes.string,
   promotionAdditionText: PropTypes.string,
   weight: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
 };
 
 TradeCard.defaultProps = {
