@@ -6,6 +6,8 @@ import TradeCardStyled from "./TradeCardStyled";
 import TradeCardPreTitlePosition from "./TradeCardPreTitlePosition";
 import TradeCardBrandNamePosition from "./TradeCardBrandNamePosition";
 import TradeCardIngredientPosition from "./TradeCardIngredientPosition";
+import TradeCardWeightStyled from "./TradeCardWeightStyled";
+import TradeCardWeightPosition from "./TradeCardWeightPosition";
 
 import {
   Trebuchet16NormalFont,
@@ -14,8 +16,6 @@ import {
   Trebuchet42NormalFont,
   Trebuchet48BoldFont,
 } from "../../Fonts/Fonts";
-import TradeCardWeightStyled from "./TradeCardWeightStyled";
-import TradeCardWeightPosition from "./TradeCardWeightPosition";
 
 const TradeCard = ({ preTitle, brandName, withIngredient, weight, theme }) => {
   const [hover, setHover] = useState(false);
@@ -23,29 +23,31 @@ const TradeCard = ({ preTitle, brandName, withIngredient, weight, theme }) => {
   const [disabled, setDisabled] = useState(false);
 
   return (
-    <TradeCardStyled>
-      <TradeCardPreTitlePosition>
-        <Trebuchet16NormalFont style={{ color: theme.colors.font.gray }}>
-          {preTitle}
-        </Trebuchet16NormalFont>
-      </TradeCardPreTitlePosition>
-      <TradeCardBrandNamePosition>
-        <Trebuchet48BoldFont>{brandName}</Trebuchet48BoldFont>
-      </TradeCardBrandNamePosition>
-      <TradeCardIngredientPosition>
-        <Trebuchet24BoldFont>{withIngredient}</Trebuchet24BoldFont>
-      </TradeCardIngredientPosition>
-      <TradeCardWeightPosition>
-        <TradeCardWeightStyled>
-          <Trebuchet42NormalFont style={{ color: theme.colors.font.white }}>
-            {weight}
-          </Trebuchet42NormalFont>
-          <Trebuchet21NormalFont style={{ color: theme.colors.font.white }}>
-            кг
-          </Trebuchet21NormalFont>
-        </TradeCardWeightStyled>
-      </TradeCardWeightPosition>
-    </TradeCardStyled>
+    <div style={{ position: "relative" }}>
+      <TradeCardStyled>
+        <TradeCardPreTitlePosition>
+          <Trebuchet16NormalFont style={{ color: theme.colors.font.gray }}>
+            {preTitle}
+          </Trebuchet16NormalFont>
+        </TradeCardPreTitlePosition>
+        <TradeCardBrandNamePosition>
+          <Trebuchet48BoldFont>{brandName}</Trebuchet48BoldFont>
+        </TradeCardBrandNamePosition>
+        <TradeCardIngredientPosition>
+          <Trebuchet24BoldFont>{withIngredient}</Trebuchet24BoldFont>
+        </TradeCardIngredientPosition>
+        <TradeCardWeightPosition>
+          <TradeCardWeightStyled>
+            <Trebuchet42NormalFont style={{ color: theme.colors.font.white }}>
+              {weight}
+            </Trebuchet42NormalFont>
+            <Trebuchet21NormalFont style={{ color: theme.colors.font.white }}>
+              кг
+            </Trebuchet21NormalFont>
+          </TradeCardWeightStyled>
+        </TradeCardWeightPosition>
+      </TradeCardStyled>
+    </div>
   );
 };
 
