@@ -50,7 +50,14 @@ const TradeCard = ({
       >
         <TradeCardPreTitlePosition>
           <Trebuchet16NormalFont style={{ color: theme.colors.font.gray }}>
-            {preTitle}
+            {selected && hover ? (
+              <Trebuchet16NormalFont
+                children="Котэ не одобряет?"
+                style={{ color: theme.colors.border.selectedHover }}
+              />
+            ) : (
+              preTitle
+            )}
           </Trebuchet16NormalFont>
         </TradeCardPreTitlePosition>
         <TradeCardBrandNamePosition>

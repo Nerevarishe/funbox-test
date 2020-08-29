@@ -20,7 +20,7 @@ const TradeCardStyled = styled.div`
   margin-bottom: 14px;
   background: url(${bgCat}) no-repeat, ${({ theme }) => theme.colors.bg.card};
   overflow: hidden;
-  // clip-path: polygon(48px 0, 100% 0, 100% 100%, 0 100%, 0 48px, 48px 0);
+  clip-path: polygon(48px 0, 100% 0, 100% 100%, 0 100%, 0 48px, 48px 0);
   
   cursor: pointer;
 
@@ -31,7 +31,6 @@ const TradeCardStyled = styled.div`
     margin: -51px;
     position: absolute;
     transform: rotate(45deg);
-    clip-path: url(#clipBorderCorner);
     border: 4px solid
       ${({ theme, status }) =>
         status.hover
